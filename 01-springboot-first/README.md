@@ -111,35 +111,38 @@ spring-boot-starter-parent 也有个父模块
 
 1. 引入依赖
 
-   <!--引入 Spring Boot 内嵌的 Tomcat 对 JSP 的解析包，不加解析不了 jsp 页面-->
-        <!--如果只是使用 JSP 页面，可以只添加该依赖-->
-        <dependency>
-            <groupId>org.apache.tomcat.embed</groupId>
-            <artifactId>tomcat-embed-jasper</artifactId>
-        </dependency>
-        <!--如果要使用 servlet 必须添加该以下两个依赖-->
-        <!-- servlet 依赖的 jar 包-->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet.jsp</groupId>
-            <artifactId>javax.servlet.jsp-api</artifactId>
-            <version>2.3.1</version>
-        </dependency>
 
-        <!--如果使用 JSTL 必须添加该依赖-->
-        <!--jstl 标签依赖的 jar 包 start-->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>jstl</artifactId>
-        </dependency>
+       <!--引入 Spring Boot 内嵌的 Tomcat 对 JSP 的解析包，不加解析不了 jsp 页面-->
+            <!--如果只是使用 JSP 页面，可以只添加该依赖-->
+            <dependency>
+                <groupId>org.apache.tomcat.embed</groupId>
+                <artifactId>tomcat-embed-jasper</artifactId>
+            </dependency>
+            <!--如果要使用 servlet 必须添加该以下两个依赖-->
+            <!-- servlet 依赖的 jar 包-->
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet.jsp</groupId>
+                <artifactId>javax.servlet.jsp-api</artifactId>
+                <version>2.3.1</version>
+            </dependency>
+    
+            <!--如果使用 JSTL 必须添加该依赖-->
+            <!--jstl 标签依赖的 jar 包 start-->
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>jstl</artifactId>
+            </dependency>
+
 
 2. 配置jsp文件编译到指定目录 META-INF/resources 目录下
 
-SpringBoot 要求 jsp 文件必须编译到指定的 META-INF/resources 目录下才能访问，否则
-访问不到
+
+    SpringBoot 要求 jsp 文件必须编译到指定的 META-INF/resources 目录下才能访问，否则
+    访问不到
     
     <resources>
         <resource>
@@ -164,13 +167,22 @@ SpringBoot 要求 jsp 文件必须编译到指定的 META-INF/resources 目录�
 
 4. 在 在 src/main  下创建一个 webapp目录
 
-    指定该目录为Web Resource Directory； 用于存放jsp 文件。
+     
+     指定该目录为Web Resource Directory； 用于存放jsp 文件。
     
    
    
-
+#### 五: 启动一个springboot ?
         
+      启动类使用@SpringbootApplication标识
+      
+      
+      main方法上写上：
         
+              SpringApplication.run(SpringbootApplication.class, args);
+              
+      
+      启动类可以实现CommandLineRunner接口，让后实现方法run; run中可以使用自动注入的bean对象。                
 
 
 

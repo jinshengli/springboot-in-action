@@ -1,15 +1,28 @@
 package com.ljs.springboot;
 
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
+
 @SpringBootApplication
-public class SpringbootApplication {
+public class SpringbootApplication implements CommandLineRunner {
 
     public static void main(String[] args) {
         ConfigurableApplicationContext context =
                 SpringApplication.run(SpringbootApplication.class, args);
     }
 
+    @Override
+    public void run(String... args) throws Exception {
+
+    }
 }
+
+
+/*
+    root left right
+    left root right
+
+ */
