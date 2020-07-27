@@ -1,4 +1,4 @@
-package com.ljs.servlet;
+package com.ljs.springboot.servlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,7 +12,7 @@ import java.io.IOException;
  * description:
  */
 
-@WebServlet(urlPatterns = "/myServlet")
+
 public class MyServlet extends HttpServlet {
 
     @Override
@@ -20,6 +20,7 @@ public class MyServlet extends HttpServlet {
         resp.getWriter().print("My SpringBoot Servlet");
         resp.getWriter().flush();
         resp.getWriter().close();
+
     }
 
     @Override
